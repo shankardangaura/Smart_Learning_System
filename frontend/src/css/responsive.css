@@ -1,0 +1,45 @@
+@media only screen and (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header, .footer {
+        text-align: center;
+    }
+    
+    .shape-card {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+    }
+    
+    .quiz-question {
+        font-size: 18px;
+    }
+    
+    .feedback-message {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .shape-title {
+        font-size: 20px;
+    }
+    
+    .button {
+        width: 100%;
+        padding: 10px;
+    }
+}
