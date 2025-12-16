@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.example.org/shapes#">
+
+    <owl:Ontology rdf:about="http://www.example.org/shapes"/>
+
+    <!-- ===================== -->
+    <!-- Classes -->
+    <!-- ===================== -->
+
+    <owl:Class rdf:about="#Person"/>
+
+    <owl:Class rdf:about="#Student">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Shape"/>
+    <owl:Class rdf:about="#Circle">
+        <rdfs:subClassOf rdf:resource="#Shape"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Square">
+        <rdfs:subClassOf rdf:resource="#Shape"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Rectangle">
+        <rdfs:subClassOf rdf:resource="#Shape"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Triangle">
+        <rdfs:subClassOf rdf:resource="#Shape"/>
+    </owl:Class>
+
+    <!-- ===================== -->
+    <!-- Object Properties -->
+    <!-- ===================== -->
+
+    <owl:ObjectProperty rdf:about="#studiesShape">
+        <rdfs:domain rdf:resource="#Student"/>
+        <rdfs:range rdf:resource="#Shape"/>
+    </owl:ObjectProperty>
+
+    <!-- ===================== -->
+    <!-- Datatype Properties -->
+    <!-- ===================== -->
+
+    <!-- EXISTING PROPERTY (UNCHANGED) -->
+    <owl:DatatypeProperty rdf:about="#area">
+        <rdfs:domain rdf:resource="#Shape"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- ===================== -->
+    <!-- Individuals -->
+    <!-- ===================== -->
+
+    <!-- Student -->
+    <owl:NamedIndividual rdf:about="#Student1">
+        <rdf:type rdf:resource="#Student"/>
+        <studiesShape rdf:resource="#Circle1"/>
+        <studiesShape rdf:resource="#Square1"/>
+        <studiesShape rdf:resource="#Rectangle1"/>
+        <studiesShape rdf:resource="#Triangle1"/>
+    </owl:NamedIndividual>
+
+    <!-- Shapes (UNCHANGED LOGIC) -->
+
+    <owl:NamedIndividual rdf:about="#Circle1">
+        <rdf:type rdf:resource="#Circle"/>
+        <area rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            3.14 * radius^2
+        </area>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Square1">
+        <rdf:type rdf:resource="#Square"/>
+        <area rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            side^2
+        </area>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Rectangle1">
+        <rdf:type rdf:resource="#Rectangle"/>
+        <area rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            length * width
+        </area>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Triangle1">
+        <rdf:type rdf:resource="#Triangle"/>
+        <area rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            0.5 * base * height
+        </area>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
